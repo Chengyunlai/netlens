@@ -1,0 +1,24 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+*.tsbuildinfo
+
+# 测试与覆盖率
+coverage/
+.pytest-tmp/
+
+# 探测产物（基线、报告）
+*.webnet.json
+baseline.json
+
+# 编辑器与系统
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# 日志
+*.log
+npm-debug.log*
