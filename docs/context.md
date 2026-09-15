@@ -3,7 +3,7 @@
 这份文档记录影响后续实现判断的**稳定事实**：目标、术语、边界、约束。
 临时讨论和未确认的方案不写在这里。
 
-最后更新：2026-09-15（仓库建立）
+最后更新：2026-09-15（issue-01 完成：技术选型落地，最小入口跑通）
 
 ## 项目目标
 
@@ -49,12 +49,31 @@
 - **当前阶段不引入浏览器。** probe 只使用 Node 内置的 `dns` / `net` / `tls` / `http` / `http2` 模块。
 - **不乱发明指标。** 只使用协议与运行时真实提供的数据（socket 事件、TLS 信息、响应头）。
 
+## 技术选型（已确定）
+
+**路线 A —— TypeScript 源码 + Node 原生运行（开发期零构建）+ 发布时 `tsc` 编译 `dist`。**
+决策过程与实测记录见 [issue #1](https://github.com/Chengyunlai/netlens/issues/1)。
+
+以下几条是实测得出的约束，不要在重构时删掉：
+
+- `tsconfig` 必须显式声明 `"types": ["node"]`。缺这一项时 `console` / `process` 报 `TS2584`，编译退出码变 2。
+- devDependency 是两个：`typescript` + `@types/node`。
+- 代码只能用可被类型剥离的语法（由 `erasableSyntaxOnly` 强制）：不能用 `enum` / `namespace` / 构造函数参数属性。
+- 探测必须用独立定时器做总时长兜底。`request.setTimeout()` 只在 socket **已连接之后**才生效，保护不了建连阶段。
+
+## 验证命令
+
+```bash
+node src/cli.ts example.com                            # 开发期直跑，无需构建
+node examples/issue-01-tech-stack/user_code/main.ts    # 跑 example
+npm run typecheck                                      # 类型检查（含 examples）
+npm run build && node dist/cli.js example.com          # 验证发布产物
+```
+
 ## 待定
 
-- **技术选型**（语言与构建方式）：见 [issue #1](https://github.com/Chengyunlai/netlens/issues/1)。推荐路线为 TypeScript + Node 原生运行（开发期零构建）、发布时 `tsc` 编译 `dist`；待确认。
-- **包名**：暂用 `netlens` 作为工作名。
-- **验证命令**：待技术选型确定后补全。
-- **测试框架 / 格式化工具**：有意延期，等有真实代码可测时再定。
+- **包名**：暂用 `netlens` 作为工作名，发布前确认 npm 上是否可用。
+- **测试框架 / 格式化工具**：有意延期。当前没有值得断言的纯逻辑，硬上会成为负担；等出现第一个真正的规则引擎再引入。
 
 ## 导航
 

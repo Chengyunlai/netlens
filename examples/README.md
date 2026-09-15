@@ -34,6 +34,6 @@ examples/
 
 | 阶段 / Example | Issue | 运行命令 | 预期结果 | 实现记录 | Commit |
 | --- | --- | --- | --- | --- | --- |
-| `issue-01-tech-stack` | [#1](https://github.com/Chengyunlai/netlens/issues/1) | _待实现_ | `node src/cli.ts <url>` 打印五段分层耗时 | _待补_ | _待补_ |
+| `issue-01-tech-stack` | [#1](https://github.com/Chengyunlai/netlens/issues/1) | `node examples/issue-01-tech-stack/user_code/main.ts https://example.com` | 打印状态码、远端地址、TLS 版本与五个阶段的时间戳 | [`docs/implementation/issue-01-tech-stack.md`](../docs/implementation/issue-01-tech-stack.md) | `a9dba47` |
 
-> 当前状态：`issue-01` 处于"等待技术选型确认"，尚未开始实现。
+> 当前状态：`issue-01` 已完成实现，等待评审。下一个阶段是单请求分层探针的完整版本（诊断规则、冷热对比、终端渲染）。

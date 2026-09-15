@@ -81,8 +81,41 @@ npx netlens probe https://example.com
 
 ## 快速开始
 
-> 项目处于起步阶段，尚未发布到 npm，本地运行命令待技术选型确定后补全。
-> 参与开发请先读 [CONTRIBUTING.md](./CONTRIBUTING.md)。
+尚未发布到 npm，目前从源码运行：
+
+```bash
+git clone https://github.com/Chengyunlai/netlens.git
+cd netlens
+node src/cli.ts example.com
+```
+
+不需要安装依赖，也不需要构建——开发期直接运行 TypeScript 源码（要求 Node 22.18+，
+它内置了类型剥离能力）。只有发布前才需要 `npm install && npm run build`。
+
+输出形如：
+
+```text
+https://example.com/
+
+分层耗时（冷请求，首次连接）
+  DNS 解析    12.9 ms
+  TCP 握手   176.2 ms
+  TLS 握手   180.4 ms
+  首字节     172.4 ms
+  响应传输     1.2 ms
+  ───────────────────
+  合计       543.1 ms
+
+连接信息
+  远端      104.20.23.154:443 (IPv4)
+  请求协议  http/1.1
+  TLS       TLSv1.3
+  状态码    200
+  响应体    318 字节
+```
+
+> 这就是当前阶段的全部能力：**一次请求的分层耗时**。诊断规则、冷热对比、
+> 整页连接图都属于后续阶段，见[路线图](#路线图)。
 
 ## 项目导航
 
