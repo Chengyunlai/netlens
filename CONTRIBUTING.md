@@ -39,9 +39,9 @@
 ## 本地开发
 
 ```bash
-git clone <repo>
+git clone https://github.com/Chengyunlai/netlens.git
 cd netlens
-# 具体命令见 README 的"快速开始"；技术选型确定后补全
+# 具体运行命令见 README 的"快速开始"，技术选型确定后补全
 ```
 
 ## 代码约定
