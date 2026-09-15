@@ -1,0 +1,35 @@
+{
+  "name": "netlens",
+  "version": "0.1.0",
+  "description": "把 DNS / TCP / TLS / 连接复用这些网络层细节，翻译成 Web 性能问题与优化建议的终端诊断工具",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "bin": {
+    "netlens": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "node src/cli.ts",
+    "typecheck": "tsc -p tsconfig.typecheck.json",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "web-performance",
+    "network",
+    "tcp",
+    "tls",
+    "dns",
+    "cli",
+    "diagnostics"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.5.1",
+    "typescript": "^7.0.2"
+  }
+}
