@@ -71,7 +71,7 @@ feat: 增加 keep-alive 失效检测规则
 服务端返回 Connection: close 时，热请求仍会新建连接，
 原实现只对比耗时无法区分"复用失败"与"服务端慢"。
 改用 req.reusedSocket 作为硬证据。
-验证站点：example.com / chengyunlai.top
+验证站点：至少一个公网可访问的真实站点（本地或内网地址测不出真实网络行为）
 ```
 
 ## 提交流程
