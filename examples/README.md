@@ -4,12 +4,14 @@
 
 ## 写法约定
 
-每个阶段一个目录，命名 `examples/<stage-id>-<slug>/`：
+每个阶段一个目录，命名 `examples/<stage-id>-<slug>/`。
+
+`<stage-id>` **优先使用 issue 编号**（如 `issue-01`）；没有 issue 时使用阶段编号（如 `stage-01`）。目录一旦被记录引用就不要改名——如果 issue 编号是后来才有的，保留原目录名，在下面的索引里补上编号。
 
 ```text
 examples/
 ├── README.md                        本索引
-└── stage-01-socket-probe/
+└── issue-01-tech-stack/
     ├── README.md                    验证什么、不验证什么
     ├── user_code/
     │   ├── README.md                使用者视角与最短公开 API 路径
@@ -30,8 +32,8 @@ examples/
 
 ## 索引
 
-| 阶段 / Example | 运行命令 | 预期结果 | 实现记录 | Commit |
-| --- | --- | --- | --- | --- |
-| _（尚无示例）_ | | | | |
+| 阶段 / Example | Issue | 运行命令 | 预期结果 | 实现记录 | Commit |
+| --- | --- | --- | --- | --- | --- |
+| `issue-01-tech-stack` | [#1](https://github.com/Chengyunlai/netlens/issues/1) | _待实现_ | `node src/cli.ts <url>` 打印五段分层耗时 | _待补_ | _待补_ |
 
-> 当前状态：仓库刚建立，第一个阶段的示例会随 `probe` 的实现一起落地。
+> 当前状态：`issue-01` 处于"等待技术选型确认"，尚未开始实现。
