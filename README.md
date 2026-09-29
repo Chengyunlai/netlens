@@ -69,6 +69,10 @@ npx netlens probe https://example.com
 - 不做前端渲染指标（DOM / CSS / JS 执行成本）
 - 不自己实现 HTTP/3 客户端（第一版依靠浏览器获取真实信息）
 
+> 以上是**产品主线**的边界。`examples/raw-*/` 下的学习层示例刻意不遵守这些边界 ——
+> 它存在的意义就是把封装拆开，看清协议本身在做什么。两条路线的关系见
+> [AGENTS.md 的两条实现路线](./AGENTS.md#两条实现路线)。
+
 ## 路线图
 
 | 阶段 | 命令 | 状态 |
@@ -126,6 +130,8 @@ https://example.com/
 | AI / 协作者的工作规则 | [AGENTS.md](./AGENTS.md) |
 | 各阶段可运行示例 | [examples/README.md](./examples/README.md) |
 | 阶段实现记录 | [docs/implementation/](./docs/implementation/) |
+| 这个项目能学到什么、学不到什么 | [docs/learning-map.md](./docs/learning-map.md) |
+| 学习层：不走封装的原始实现 | [examples/raw-network/README.md](./examples/raw-network/README.md) |
 
 ## 许可
 
