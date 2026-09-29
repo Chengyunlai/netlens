@@ -40,7 +40,7 @@
 | page | `netlens page <url>` | 整页的连接图（多 Origin、连接数、关键路径） | 需要浏览器 / CDP |
 | compare | `netlens compare <a> <b>` | 两次探测的差值 | 复用前两层的输出 |
 
-当前阶段：**probe**。
+当前阶段：**probe**。表中的子命令形式（`probe` / `page` / `compare`）是目标形态；当前实现只有 `netlens <url>`。
 
 ## 术语
 

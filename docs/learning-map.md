@@ -83,6 +83,6 @@
 
 1. **已完成** —— 跑通产品线的 probe，看清五段耗时各自来自哪个事件
 2. **已完成** —— 原始实现：从"用别人写的客户端"走到"自己写一次客户端"
-3. 未做 —— 并发与连接复用：多 Origin、连接池上限、HTTP/2 多路复用
-4. 未做 —— 协议协商探测：TLS 会话恢复、0-RTT、证书链的完整验证过程
-5. 未做 —— 离开本项目做独立实验：UDP / QUIC、抓包、容器网络、内核队列
+3. 未做 —— 并发与连接复用：多 Origin、连接池上限、HTTP/2 多路复用（[issue #3](https://github.com/Chengyunlai/netlens/issues/3)）
+4. 未做 —— 协议协商探测：TLS 会话恢复、0-RTT、证书链的完整验证过程（[issue #4](https://github.com/Chengyunlai/netlens/issues/4)）
+5. 未做 —— 离开本项目做独立实验：UDP / QUIC、抓包、容器网络、内核队列（不属本仓库范围，不建 issue）

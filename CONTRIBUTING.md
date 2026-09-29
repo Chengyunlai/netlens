@@ -78,7 +78,7 @@ feat: 增加 keep-alive 失效检测规则
 
 1. 开一个 issue 描述你发现的网络现象（附站点、`--json` 输出、你的判断）。
 2. Fork 并开分支，分支名形如 `feat/keepalive-detection`。
-3. 在 `examples/<stage-id>-<slug>/` 下补一个可运行的示例（见 [examples/README.md](./examples/README.md)）。
+3. 在 `examples/` 下补一个可运行的示例。目录命名与分类规则见 [AGENTS.md](./AGENTS.md#example-归档)，索引见 [examples/README.md](./examples/README.md)。
 4. 在真实站点上跑一遍，把真实输出贴进 PR 描述。
 5. 提交 PR。
 
