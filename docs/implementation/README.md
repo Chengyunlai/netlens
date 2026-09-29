@@ -2,7 +2,11 @@
 
 每个阶段完成后，在这里留下一份记录，把"意图 → 实现 → 证据"闭合起来。
 
-命名：`docs/implementation/<stage-id>.md`，与 `examples/<stage-id>-<slug>/` 一一对应。
+命名：`docs/implementation/<stage-id>.md`，与 `examples/` 下的**产品阶段示例**一一对应
+（目录命名与分类规则见 [AGENTS.md](../AGENTS.md#example-归档)）。
+
+**学习层示例不在本目录留记录。** 它的说明、实测输出与观察点就地写在 `examples/raw-*/README.md` 里 ——
+那些内容与代码是同一件事，拆开放反而要看两个地方。
 
 ## 每份记录包含
 
@@ -13,4 +17,4 @@
 - **验证命令与真实输出**
 - **关联**：example 目录、实现 commit（C1）、记录 commit（C2）
 
-> 当前状态：尚无已完成的阶段。
+> 当前状态：`issue-01` 已有实现记录 —— [`issue-01-tech-stack.md`](./issue-01-tech-stack.md)。学习层示例就地记录，不进本目录。
